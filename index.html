@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EDUCA+ | Futuro em Conexão — Diário Escolar</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <meta
+      name="description"
+      content="EDUCA+ Futuro em Conexão: diário escolar e acompanhamento acadêmico com frequência, notas, atividades, ocorrências e comunicados."
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-scene" aria-hidden="true">
+      <div class="bg-glow bg-glow--1"></div>
+      <div class="bg-glow bg-glow--2"></div>
+      <div class="bg-dots"></div>
+      <div class="bg-cube bg-cube--1"></div>
+      <div class="bg-cube bg-cube--2"></div>
+      <div class="bg-cube bg-cube--3"></div>
+      <div class="bg-cube bg-cube--4"></div>
+    </div>
+
+    <!-- LOGIN -->
+    <main id="auth-screen" class="auth-screen">
+      <section class="auth-card">
+        <header class="brand brand--auth">
+          <span class="brand__mark">
+            <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+              <circle cx="17" cy="14" r="6" fill="currentColor" />
+              <path d="M4 42c1-9 7-14 13-14s12 5 13 14z" fill="currentColor" />
+              <path d="M30 8l12 6-12 6z" fill="var(--cyan)" />
+            </svg>
+          </span>
+          <span class="brand__text">
+            <strong>EDUCA<em>+</em></strong>
+            <small>FUTURO EM CONEXÃO</small>
+          </span>
+        </header>
+
+        <div id="auth-panels"></div>
+
+      </section>
+    </main>
+
+    <!-- APP -->
+    <div id="app" class="app" hidden>
+      <header class="topbar">
+        <div class="topbar__inner">
+          <div class="brand">
+            <span class="brand__mark">
+              <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
+                <circle cx="17" cy="14" r="6" fill="currentColor" />
+                <path d="M4 42c1-9 7-14 13-14s12 5 13 14z" fill="currentColor" />
+                <path d="M30 8l12 6-12 6z" fill="var(--cyan)" />
+              </svg>
+            </span>
+            <span class="brand__text">
+              <strong>EDUCA<em>+</em></strong>
+              <small>FUTURO EM CONEXÃO</small>
+            </span>
+          </div>
+
+          <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
+
+          <nav id="main-nav" class="main-nav" aria-label="Navegação principal"></nav>
+
+          <div class="topbar__end">
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+              <span class="theme-toggle__icon" data-icon="sun"></span>
+              <span class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
+              <span class="theme-toggle__icon" data-icon="moon"></span>
+            </button>
+            <button id="user-chip" class="user-chip" type="button">
+              <span class="user-chip__text">
+                <strong id="user-name"></strong>
+                <small id="user-role"></small>
+              </span>
+              <span class="user-chip__avatar">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" fill="currentColor" />
+                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="view" class="view" tabindex="-1"></main>
+
+      <footer class="footer">
+        <span>EDUCA+ · Futuro em Conexão — Diário Escolar e Acompanhamento Acadêmico</span>
+      </footer>
+    </div>
+
+    <div id="modal-root" class="modal-root" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <header class="modal__head">
+          <h2 id="modal-title"></h2>
+          <button class="modal__close" type="button" data-close-modal aria-label="Fechar" data-icon="close"></button>
+        </header>
+        <div id="modal-body" class="modal__body"></div>
+      </div>
+    </div>
+
+    <div id="toasts" class="toasts" aria-live="polite"></div>
+
+    <script src="./js/store.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/dashboards.js"></script>
+    <script src="./js/modules.js"></script>
+    <script src="./js/auth.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/migrar-firebase.js"></script>
+
+
+  </body>
+</html>
